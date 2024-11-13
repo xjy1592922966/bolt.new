@@ -76,7 +76,7 @@ export const ChatImpl = memo(({ initialMessages, storeMessageHistory }: ChatProp
   const [animationScope, animate] = useAnimate();
 
   const { messages, isLoading, input, handleInputChange, setInput, stop, append } = useChat({
-    api: '/api/chat',
+    api: 'https://api.anthropic.com/v1',
     onError: (error) => {
       logger.error('Request failed\n\n', error);
       toast.error('There was an error processing your request');
